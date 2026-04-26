@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Grilled Chicken",
+    "shortDescription": "Juicy grilled chicken with herbs",
+    "fullDescription": "Perfectly grilled chicken marinated with special spices and herbs, served with fresh salad and sauce.",
+    "price": 12,
+    "priority": "high",
+    "date": "2026-04-01",
+    "imageUrl": "https://i.ibb.co.com/9mzD2974/Grilled-Chicken-V1-1152x1536.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Beef Steak",
+    "shortDescription": "Tender beef steak cooked medium",
+    "fullDescription": "Premium beef steak cooked to perfection with rich flavors, served with mashed potatoes and vegetables.",
+    "price": 18,
+    "priority": "high",
+    "date": "2026-04-02",
+    "imageUrl": "https://i.ibb.co.com/fzmQR76W/Screenshot-2026-04-26-162254.png"
+  },
+  {
+    "id": 3,
+    "title": "Pasta Alfredo",
+    "shortDescription": "Creamy white sauce pasta",
+    "fullDescription": "Delicious creamy Alfredo pasta made with fresh cream, cheese, and herbs for a rich taste.",
+    "price": 10,
+    "priority": "medium",
+    "date": "2026-04-03",
+    "imageUrl": "https://i.ibb.co.com/MxStjgYc/images.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Cheese Burger",
+    "shortDescription": "Loaded beef burger with cheese",
+    "fullDescription": "A double-layered juicy beef burger topped with melted cheese, lettuce, and special sauce.",
+    "price": 8,
+    "priority": "medium",
+    "date": "2026-04-04",
+    "imageUrl": "https://i.ibb.co.com/6JyQ3cQr/Screenshot-2026-04-26-162310.png"
+  },
+  {
+    "id": 5,
+    "title": "Chicken Pizza",
+    "shortDescription": "Cheesy chicken pizza slice",
+    "fullDescription": "Stone-baked pizza topped with chicken, mozzarella cheese, olives, and fresh herbs.",
+    "price": 14,
+    "priority": "high",
+    "date": "2026-04-05",
+    "imageUrl": "https://i.ibb.co.com/MD62K4dM/Screenshot-2026-04-26-162851.png"
+  },
+  {
+    "id": 6,
+    "title": "Vegetable Salad",
+    "shortDescription": "Fresh healthy green salad",
+    "fullDescription": "A healthy mix of fresh vegetables including lettuce, cucumber, tomato, and olive oil dressing.",
+    "price": 6,
+    "priority": "low",
+    "date": "2026-04-06",
+    "imageUrl": "https://i.ibb.co.com/YFFR8p0R/Screenshot-2026-04-26-163037.png"
+  },
+  {
+    "id": 7,
+    "title": "Fried Rice",
+    "shortDescription": "Asian style fried rice",
+    "fullDescription": "Delicious fried rice cooked with vegetables, egg, and special soy sauce seasoning.",
+    "price": 9,
+    "priority": "medium",
+    "date": "2026-04-07",
+    "imageUrl": "https://i.ibb.co.com/DgbLRt9x/Screenshot-2026-04-26-162343.png"
+  },
+  {
+    "id": 8,
+    "title": "Chocolate Dessert",
+    "shortDescription": "Sweet chocolate cake slice",
+    "fullDescription": "Rich and moist chocolate cake layered with creamy chocolate frosting and toppings.",
+    "price": 7,
+    "priority": "low",
+    "date": "2026-04-08",
+    "imageUrl": "https://i.ibb.co.com/78m4148/Screenshot-2026-04-26-162401.png"
+  }
+]
