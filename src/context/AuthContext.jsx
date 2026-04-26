@@ -1,12 +1,11 @@
 "use client";
-
 import { createContext, useEffect, useState } from "react";
 import { auth } from "@/lib/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
 export const AuthContext = createContext();
 
-const AuthProvider = ({ children }) => {
+export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -24,6 +23,4 @@ const AuthProvider = ({ children }) => {
       {!loading && children}
     </AuthContext.Provider>
   );
-};
-
-export default AuthProvider;
+}

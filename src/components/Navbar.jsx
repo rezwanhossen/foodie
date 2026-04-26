@@ -22,7 +22,7 @@ export default function Navbar() {
   const handleLogout = async () => {
     await signOut(auth);
   };
-  console.log(user);
+
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
@@ -61,14 +61,14 @@ export default function Navbar() {
                 </div>
 
                 <Link
-                  href="/add-product"
+                  href="/addProduct"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Add Product
                 </Link>
 
                 <Link
-                  href="/manage-products"
+                  href="/manageProducts"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Manage Products
