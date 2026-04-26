@@ -4,14 +4,13 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { auth } from "@/lib/firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const AddProductPage = () => {
   const router = useRouter();
 
   const [loading, setLoading] = useState(true);
-  const [success, setSuccess] = useState("");
 
-  // 🔐 Protect route
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
       if (!user) {
@@ -24,31 +23,6 @@ const AddProductPage = () => {
     return () => unsub();
   }, []);
 
-  //   const handleSubmit = (e) => {
-  //     e.preventDefault();
-
-  //     const form = e.target;
-
-  //     const data = {
-  //       title: form.title.value,
-  //       shortDescription: form.shortDescription.value,
-  //       fullDescription: form.fullDescription.value,
-  //       price: form.price.value,
-  //       date: form.date.value,
-  //       priority: form.priority.value,
-  //       image: form.image.value,
-  //     };
-
-  //     console.log("Product Added:", data);
-
-  //     setSuccess("Product added successfully ✅");
-
-  //     form.reset();
-
-  //     setTimeout(() => {
-  //       setSuccess("");
-  //     }, 3000);
-  //   };
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -65,12 +39,11 @@ const AddProductPage = () => {
       imageUrl: form.image.value,
     };
 
-    // 🔥 old items + new item
     const oldItems = JSON.parse(localStorage.getItem("items")) || [];
 
     localStorage.setItem("items", JSON.stringify([...oldItems, newItem]));
 
-    alert("Product Added ✅");
+    toast("Product Added ✅");
     form.reset();
   };
 
@@ -82,12 +55,6 @@ const AddProductPage = () => {
     <div className="min-h-screen flex justify-center items-center bg-gray-100 p-4">
       <div className="w-full max-w-2xl bg-white p-6 rounded-xl shadow">
         <h1 className="text-2xl font-bold mb-4">Add Product 🛒</h1>
-
-        {success && (
-          <div className="mb-4 p-3 bg-green-100 text-green-700 rounded">
-            {success}
-          </div>
-        )}
 
         <form onSubmit={handleSubmit} className="space-y-3">
           <input

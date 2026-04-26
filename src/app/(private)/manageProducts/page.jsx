@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { auth } from "@/lib/firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const ManageItems = () => {
   const router = useRouter();
@@ -12,7 +13,6 @@ const ManageItems = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // 🔐 Protect route
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
       if (!user) {
@@ -25,15 +25,13 @@ const ManageItems = () => {
     return () => unsub();
   }, []);
 
-  // 📦 Load from localStorage
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("items")) || [];
     setItems(stored);
   }, []);
 
-  // 🗑 Delete item
   const handleDelete = (id) => {
-    const confirmDelete = confirm("Delete this item?");
+    const confirmDelete = toast("Delete this item?");
 
     if (confirmDelete) {
       const updated = items.filter((item) => item.id !== id);
@@ -50,7 +48,7 @@ const ManageItems = () => {
   return (
     <div className="p-6 max-w-6xl bg-gray-50 mx-auto ">
       <h1 className="text-2xl font-bold mb-6">
-        Manage Items <span className="text-yellow-400">{items.length}</span>{" "}
+        Manage Items <span className="text-yellow-400">{items.length}</span>
       </h1>
       {items.length === 0 ? (
         <div className=" flex justify-center items-center rounded-3xl max-w-5xl my-6 mx-auto h-[50vh] bg-white">
@@ -60,7 +58,7 @@ const ManageItems = () => {
           </p>
         </div>
       ) : (
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {items.map((item) => (
             <div
               key={item.id}
@@ -82,13 +80,10 @@ const ManageItems = () => {
               </div>
 
               <div className="flex gap-2 mt-4">
-                <Link href={`/items/${item.id}`}>
-                  <button className="px-3 py-1 bg-blue-500 text-white rounded">
-                    View
-                  </button>
-                </Link>
+                <button className="px-3 py-1 bg-blue-500 text-white rounded">
+                  View
+                </button>
 
-                {/* Delete */}
                 <button
                   onClick={() => handleDelete(item.id)}
                   className="px-3 py-1 bg-red-500 text-white rounded"

@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 const RegisterPage = () => {
   const router = useRouter();
   const handleRegister = async (e) => {
@@ -33,9 +34,9 @@ const RegisterPage = () => {
         photoURL: image,
       });
       router.push("/");
-      alert("Register Success ✅");
+      toast("Register Success ✅");
     } catch (error) {
-      alert(error.message);
+      toast(error.message);
     }
   };
   const handleGoogleLogin = async () => {
@@ -44,9 +45,9 @@ const RegisterPage = () => {
     try {
       await signInWithPopup(auth, provider);
       router.push("/");
-      alert("Google Login Success ✅");
+      toast("Google Login Success ✅");
     } catch (error) {
-      alert(error.message);
+      toast(error.message);
     }
   };
 

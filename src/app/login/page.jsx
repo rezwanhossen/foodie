@@ -3,6 +3,7 @@ import { auth } from "@/lib/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
   const router = useRouter();
@@ -15,10 +16,10 @@ const LoginPage = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("Login Success ✅");
+      toast("Login Success ✅");
       router.push("/");
     } catch (error) {
-      alert(error.message);
+      toast(error.message);
     }
   };
   const handleGoogleLogin = async () => {
@@ -27,9 +28,9 @@ const LoginPage = () => {
     try {
       await signInWithPopup(auth, provider);
       router.push("/");
-      alert("Google Login Success ✅");
+      toast("Google Login Success ✅");
     } catch (error) {
-      alert(error.message);
+      toast(error.message);
     }
   };
 
