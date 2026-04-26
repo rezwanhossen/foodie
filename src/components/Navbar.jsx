@@ -104,17 +104,13 @@ export default function Navbar() {
 
           {!user ? (
             <>
-              <button
-                onClick={() =>
-                  setUser({ name: "Rezwan", email: "user@mail.com" })
-                }
-                className="w-full border py-2 rounded"
+              <Link href={"/login"}>Login</Link>
+              <Link
+                href={"/register"}
+                className="w-full bg-yellow-500 py-2 rounded"
               >
-                Login
-              </button>
-              <button className="w-full bg-yellow-500 py-2 rounded">
                 Register
-              </button>
+              </Link>
             </>
           ) : (
             <>
