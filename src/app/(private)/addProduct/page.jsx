@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { auth } from "@/lib/firebase";
+
 import { onAuthStateChanged } from "firebase/auth";
 import { toast } from "react-toastify";
+import { auth } from "@/app/lib/firebase.config";
 
 const AddProductPage = () => {
   const router = useRouter();

@@ -5,7 +5,7 @@ import Link from "next/link";
 import logo from "../../public/logo.png";
 import Image from "next/image";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+import { auth } from "@/app/lib/firebase.config";
 
 export default function Navbar() {
   const [user, setUser] = useState(null);

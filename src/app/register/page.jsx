@@ -1,6 +1,5 @@
 "use client";
 
-import { auth } from "@/lib/firebase";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -10,6 +9,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { auth } from "../lib/firebase.config";
 const RegisterPage = () => {
   const router = useRouter();
   const handleRegister = async (e) => {

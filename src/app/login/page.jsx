@@ -1,9 +1,10 @@
 "use client";
-import { auth } from "@/lib/firebase";
+
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { auth } from "../lib/firebase.config";
 
 const LoginPage = () => {
   const router = useRouter();
