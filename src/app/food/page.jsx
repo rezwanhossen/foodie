@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -50,7 +51,12 @@ const FoodPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {filteredItems.map((item) => (
             <div key={item.id} className="border p-4 rounded">
-              <img src={item.imageUrl} className="h-40 w-full object-cover" />
+              <Image
+                height={300}
+                width={400}
+                src={item.imageUrl}
+                className="h-40 w-full object-cover"
+              />
               <h2 className="font-bold mt-2">{item.title}</h2>
               <p className="text-sm">{item.shortDescription}</p>
               <Link href={`/food/${item.id}`}>

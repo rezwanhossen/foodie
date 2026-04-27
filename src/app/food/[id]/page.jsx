@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
 const ItemDetailsPage = () => {
   const { id } = useParams();
@@ -34,7 +35,12 @@ const ItemDetailsPage = () => {
       <Link href="/food">
         <button className="text-blue-500 mb-4">← Back</button>
       </Link>
-      <img src={item.imageUrl} className="w-full h-80 object-cover rounded" />
+      <Image
+        height={400}
+        width={500}
+        src={item.imageUrl}
+        className="w-full h-80 object-cover rounded"
+      />
       <h1 className="text-3xl font-bold mt-4">{item.title}</h1>
       <p className="mt-2 text-gray-600">{item.fullDescription}</p>
       <div className="mt-4 space-y-1">
