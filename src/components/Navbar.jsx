@@ -6,8 +6,12 @@ import logo from "../../public/logo.png";
 import Image from "next/image";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "@/app/lib/firebase.config";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const isActive = (path) => pathname === path;
   const [user, setUser] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,13 +36,34 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
-          <Link href="/food" className="hover:text-yellow-500">
+          <Link
+            href="/food"
+            className={`text-xl transition-colors ${
+              isActive("/food")
+                ? "text-yellow-500 font-bold"
+                : "hover:text-yellow-500"
+            }`}
+          >
             Food Items
           </Link>
-          <Link href="/about" className="hover:text-yellow-500">
+          <Link
+            href="/about"
+            className={`text-xl transition-colors ${
+              isActive("/about")
+                ? "text-yellow-500 font-bold"
+                : "hover:text-yellow-500"
+            }`}
+          >
             About
           </Link>
-          <Link href="/contact" className="hover:text-yellow-500">
+          <Link
+            href="/contact"
+            className={`text-xl transition-colors ${
+              isActive("/contact")
+                ? "text-yellow-500 font-bold"
+                : "hover:text-yellow-500"
+            }`}
+          >
             Contact
           </Link>
 
